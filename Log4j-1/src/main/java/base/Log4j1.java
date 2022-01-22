@@ -3,6 +3,7 @@ package base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
@@ -19,7 +20,10 @@ public class Log4j1 {
 	public static void main(String[] args) throws IOException {
 		System.out.println("=============>>>>");
 		
-		Properties props = readProperty();
+//		Properties props = readProperty();
+//		String val = (String)props.get("log4j.rootLogger");
+		
+		Properties props = readProperty1();
 		String val = (String)props.get("log4j.rootLogger");
 		
 		
@@ -32,6 +36,7 @@ public class Log4j1 {
 		log.fatal("FATAL");
 	}
 
+	// Reading file with full path
 	public static Properties readProperty() throws IOException {
 		FileInputStream fis = null;
 		Properties prop = null;
@@ -49,5 +54,23 @@ public class Log4j1 {
 		}
 		return prop;
 	}
+
+	
+	// Reading file with classpath
+		public static Properties readProperty1() throws IOException {
+			Properties prop=null;
+			InputStream is = null;
+	        try {
+	            prop = new Properties();
+	            is = new Log4j1().getClass().getResourceAsStream("/log4j.properties");
+	            prop.load(is);
+	        } catch (FileNotFoundException e) {
+	            e.printStackTrace();
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+			return prop;
+		}
+	
 
 }
