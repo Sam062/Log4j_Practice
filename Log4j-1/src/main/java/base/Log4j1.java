@@ -9,6 +9,7 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 
 public class Log4j1 {
+	private static final Logger log=Logger.getLogger(Log4j1.class);
 
 	// Log levels =>
 	//	OFF
@@ -28,7 +29,6 @@ public class Log4j1 {
 		
 		
 		System.out.println("ROOT LOGGER ="+val);
-		Logger log=Logger.getLogger(Log4j1.class);
 		log.debug("DEBUG");
 		log.info("INFO");
 		log.warn("WARN");
