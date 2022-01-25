@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="DEBUG">
+<!-- Configuration status="<>" Whatever level we give here will display on the console for log4j loading and running -->
+<Configuration status="INFO"> 
     <Appenders>
         <Console name="ConsoleAppender" target="SYSTEM_OUT">
             <PatternLayout 
               pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
         </Console>
     </Appenders>
-    <Loggers>
-        <Root level="DEBUG">
+    <Loggers> 
+<!-- This will be the app log level-->
+        <Root level="INFO">
             <AppenderRef ref="ConsoleAppender"/>
         </Root>
     </Loggers>
