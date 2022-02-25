@@ -16,11 +16,12 @@ public class Log4j2 {
 	//	ERROR
 	//	FATAL
 	public static void main(String[] args) throws IOException {
+		// to see the log msges upgrade java version using mvn update
 		System.out.println("=============>>>>");
-		log.debug("DEBUG");
-		log.info("INFO");
-		log.warn("WARN");
-		log.error("ERROR");
-		log.fatal("FATAL");
+		log.debug("DEBUG method called");
+		log.info("INFO method called");
+		log.warn("WARN method called");
+		log.error("ERROR method called");
+		log.fatal("FATAL method called");
 	}
 }
