@@ -23,5 +23,12 @@ public class Log4j2 {
 		log.warn("WARN method called");
 		log.error("ERROR method called");
 		log.fatal("FATAL method called");
+		
+		System.out.println();
+		printLog();
+	}
+	
+	public static void printLog() {
+		log.info("INFO method called from other method");
 	}
 }
